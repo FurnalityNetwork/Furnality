@@ -4,37 +4,246 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furnality — Studio de diffusion & Réseau Multimédia</title>
-  
-  <!-- Tailwind CSS & Lucide Icons via CDN -->
+
+  <!-- Tailwind CSS & Lucide Icons CDN -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
-  
-  <!-- Fallback Assets si disponibles dans le repo Assets -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/css/global.css?v=2">
 
-  <style>
-    /* Keyframes et utilitaires essentiels intégrés */
-    @keyframes marquee {
-      0% { transform: translateX(0%); }
-      100% { transform: translateX(-50%); }
-    }
-    .animate-marquee {
-      display: inline-block;
-      white-space: nowrap;
-      animation: marquee 25s linear infinite;
-    }
-    .eyebrow {
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: #6b7280;
-    }
-    .primary-button {
-      background-color: #000000;
-      color: #ffffff;
-      padding: 0.75rem 1.5rem;
-      font-weight: 700;
+  <!-- Import du dépôt Asset (au singulier) via jsDelivr CDN -->
+  <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/images/Fav%20-%20Furnality.svg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/css/global.css">
+</head>
+<body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Navigation principale -->
+  <header class="top-nav fixed top-0 z-50 w-full px-6 py-4 md:px-10 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <nav class="relative mx-auto flex max-w-7xl items-center justify-between" aria-label="Navigation principale">
+      
+      <!-- Logo Furnality -->
+      <div class="logo-box">
+        <a href="/" class="flex items-center gap-3">
+          <img src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/images/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain">
+          <span class="text-base font-bold tracking-widest text-black uppercase">Furnality</span>
+        </a>
+      </div>
+
+      <!-- Navigation -->
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="/" class="nav-link text-black font-bold">Accueil</a>
+        <a href="/Zapping" class="nav-link">Zapping</a>
+        <a href="https://OfficeBroadCaster.pages.dev" class="nav-link" target="_blank" rel="noopener noreferrer">Office Broadcaster</a>
+        <a href="/news" class="nav-link">News</a>
+      </div>
+
+      <!-- Actions & Menu Mobile -->
+      <div class="flex items-center gap-4">
+        <a href="#contact" class="primary-button hidden md:inline-flex">Contact</a>
+        <button id="menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-gray-200 lg:hidden" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" width="18" height="18"></i>
+        </button>
+      </div>
+
+      <!-- Menu Mobile -->
+      <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg lg:hidden">
+        <a href="/" class="nav-link font-bold">Accueil</a>
+        <a href="/Zapping" class="nav-link">Zapping</a>
+        <a href="https://OfficeBroadCaster.pages.dev" class="nav-link" target="_blank" rel="noopener noreferrer">Office Broadcaster</a>
+        <a href="/news" class="nav-link">News</a>
+        <a href="#contact" class="primary-button text-center mt-2">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-20">
+
+    <!-- Hero Section -->
+    <section id="accueil" class="hero relative border-b border-gray-200 px-6 py-20 md:px-12">
+      <div class="relative mx-auto w-full max-w-7xl z-10">
+        <div class="max-w-3xl">
+          <div class="flex items-center gap-3 mb-4">
+            <p class="eyebrow">Studio de diffusion & Réseau indépendant</p>
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          </div>
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight uppercase">
+            Furnality fait vivre les récits à l’image et au son.
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 max-w-2xl leading-relaxed">
+            Nous concevons, produisons et diffusons des expériences télévisées, radiophoniques et médiatiques francophones basées en Nouvelle-Calédonie.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="/Zapping" class="primary-button">Découvrir le Zapping</a>
+            <a href="#studio" class="secondary-button">En savoir plus</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bandeau défilant -->
+    <section class="border-b border-gray-200 bg-black py-3 text-white overflow-hidden whitespace-nowrap">
+      <div class="inline-block animate-marquee">
+        <p class="text-xs font-bold tracking-widest uppercase">
+          FURNALITY — TÉLÉVISION — RADIO — DIFFUSION INDÉPENDANTE — NOUMÉA — NOUVELLE-CALÉDONIE —
+        </p>
+      </div>
+    </section>
+
+    <!-- Section : Le Studio -->
+    <section id="studio" class="section-space border-t border-gray-200 py-16">
+      <div class="section-inner max-w-7xl mx-auto px-6">
+        <div class="grid gap-12 lg:grid-cols-12">
+          <div class="lg:col-span-4">
+            <p class="eyebrow mb-2">01 — Le Studio</p>
+            <h2 class="text-3xl font-bold text-black leading-tight uppercase">Une présence éditoriale pensée pour le direct.</h2>
+          </div>
+          <div class="lg:col-span-8 space-y-6 text-gray-600 leading-relaxed">
+            <p class="text-lg text-black font-semibold">
+              Furnality rassemble création, stratégie éditoriale et maîtrise technique pour transformer chaque projet en rendez-vous médiatique.
+            </p>
+            <p>
+              De la conception des habillages d'antenne à la régie de diffusion multi-plateformes, notre réseau accompagne la création indépendante sur les écrans et les ondes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Expertises -->
+    <section id="expertises" class="section-space border-t border-gray-200 bg-gray-50 py-16">
+      <div class="section-inner max-w-7xl mx-auto px-6">
+        <p class="eyebrow mb-2">02 — Domaines d'Antenne</p>
+        <h2 class="text-3xl font-bold text-black mb-10 uppercase">Trois piliers de diffusion.</h2>
+        
+        <div class="grid gap-6 md:grid-cols-3">
+          <article class="p-8 border border-gray-200 bg-white space-y-4">
+            <span class="text-xs font-mono font-bold text-gray-400">01 / TV</span>
+            <h3 class="text-xl font-bold text-black uppercase">Télévision & Flux</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Émissions, captations, habillages visuels et régie multicaméra pour les canaux du réseau.</p>
+          </article>
+
+          <article class="p-8 border border-gray-200 bg-white space-y-4">
+            <span class="text-xs font-mono font-bold text-gray-400">02 / RADIO</span>
+            <h3 class="text-xl font-bold text-black uppercase">Radio & Podcasts</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Formats audio, habillages sonores et programmation musicale continue pour Furnality Radio.</p>
+          </article>
+
+          <article class="p-8 border border-gray-200 bg-white space-y-4">
+            <span class="text-xs font-mono font-bold text-gray-400">03 / MÉDIAS</span>
+            <h3 class="text-xl font-bold text-black uppercase">Création Numérique</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Séries vidéo, contenus sociaux et formats courts pensés pour la distribution moderne.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Contact / Office Broadcaster -->
+    <section id="contact" class="section-space border-t border-gray-200 py-16">
+      <div class="section-inner max-w-7xl mx-auto px-6">
+        <div class="border border-gray-200 border-l-4 border-l-black bg-gray-50 p-8 md:p-12">
+          <div class="max-w-2xl">
+            <p class="eyebrow mb-3">Office BroadCaster</p>
+            <h2 class="text-3xl font-bold text-black uppercase">Prendre l'antenne sur le réseau.</h2>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              Projets de diffusion, partenariats de flux ou propositions de contenus : contactez la régie pour rejoindre l'antenne.
+            </p>
+            <a href="https://OfficeBroadCaster.pages.dev" target="_blank" rel="noopener noreferrer" class="primary-button mt-6">
+              Contacter la régie
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6 mt-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        
+        <!-- Identité -->
+        <div class="space-y-3">
+          <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
+          <p class="text-gray-500 leading-relaxed text-xs">
+            Du Son, de l’Image, une Famille.<br>
+            Le média francophone et 100% indépendant.
+          </p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/images/DCNC.svg" alt="Drapeau NC" class="h-6 w-auto object-contain mb-1">
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
+            <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+          </div>
+        </div>
+
+        <!-- Colonnes alimentées dynamiquement par Cloudflare D1 -->
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2"></nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2"></nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
+          <nav id="footer-channels" class="flex flex-col gap-2"></nav>
+        </div>
+
+        <!-- Informations & Légal -->
+        <div>
+          <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
+            <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
+            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
+            <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2026 Furnality — Tous droits réservés.</p>
+        <p class="font-semibold text-gray-700">Furnality Network</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script global du dépôt Asset (singulier) -->
+  <script src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/js/global.js"></script>
+
+  <!-- Fetch Cloudflare D1 avec gestion de BDD -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      fetch('https://furnality-api.furnalitystudio.workers.dev/api/footer-links')
+        .then(response => response.json())
+        .then(data => {
+          const furnalityNav = document.getElementById('footer-furnality');
+          const officeNav = document.getElementById('footer-office');
+          const channelsNav = document.getElementById('footer-channels');
+
+          data.forEach(link => {
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.target = '_blank';
+            a.className = 'footer-link text-gray-500 hover:text-black transition-colors';
+            a.textContent = link.label;
+
+            if (link.id >= 1000 && link.id < 2000 && furnalityNav) furnalityNav.appendChild(a);
+            else if (link.id >= 2000 && link.id < 3000 && officeNav) officeNav.appendChild(a);
+            else if (link.id >= 3000 && channelsNav) channelsNav.appendChild(a);
+          });
+        })
+        .catch(error => console.error('Erreur Worker D1:', error));
+    });
+  </script>
+</body>
+</html>      font-weight: 700;
       text-transform: uppercase;
       font-size: 0.75rem;
       letter-spacing: 0.1em;

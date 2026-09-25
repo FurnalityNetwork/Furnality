@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furnality — Studio de diffusion & Réseau Multimédia</title>
-
-  <!-- Tailwind CSS & Lucide Icons CDN -->
+  
+  <!-- Frameworks CSS & Icônes -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
-  <!-- Import du dépôt Asset (au singulier) via jsDelivr CDN -->
-  <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/images/Fav%20-%20Furnality.svg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/css/global.css">
+  <!-- Favicon & Stylesheet unifiés depuis le dépôt Asset -->
+  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/images/Fav%20-%20Furnality.svg">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
 </head>
 <body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between">
 
@@ -21,21 +21,21 @@
       
       <!-- Logo Furnality -->
       <div class="logo-box">
-        <a href="/" class="flex items-center gap-3">
-          <img src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/images/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain">
+        <a href="https://furnalitynetwork.github.io" class="flex items-center gap-3">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/images/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
           <span class="text-base font-bold tracking-widest text-black uppercase">Furnality</span>
         </a>
       </div>
 
-      <!-- Navigation -->
+      <!-- Navigation vers les portails -->
       <div class="hidden lg:flex items-center gap-8">
-        <a href="/" class="nav-link text-black font-bold">Accueil</a>
-        <a href="/Zapping" class="nav-link">Zapping</a>
-        <a href="https://OfficeBroadCaster.pages.dev" class="nav-link" target="_blank" rel="noopener noreferrer">Office Broadcaster</a>
-        <a href="/news" class="nav-link">News</a>
+        <a href="https://furnalitynetwork.github.io" class="nav-link text-black">Accueil</a>
+        <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link">Zapping</a>
+        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link">Office Broadcaster</a>
+        <a href="https://furnalitynetwork.github.io/news" class="nav-link">News</a>
       </div>
 
-      <!-- Actions & Menu Mobile -->
+      <!-- Statut & Menu Mobile -->
       <div class="flex items-center gap-4">
         <a href="#contact" class="primary-button hidden md:inline-flex">Contact</a>
         <button id="menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-gray-200 lg:hidden" aria-label="Ouvrir le menu">
@@ -45,10 +45,10 @@
 
       <!-- Menu Mobile -->
       <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg lg:hidden">
-        <a href="/" class="nav-link font-bold">Accueil</a>
-        <a href="/Zapping" class="nav-link">Zapping</a>
-        <a href="https://OfficeBroadCaster.pages.dev" class="nav-link" target="_blank" rel="noopener noreferrer">Office Broadcaster</a>
-        <a href="/news" class="nav-link">News</a>
+        <a href="https://furnalitynetwork.github.io" class="nav-link">Accueil</a>
+        <a href="https://furnalitynetwork.github.io/Zapping" class="nav-link">Zapping</a>
+        <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="nav-link">Office Broadcaster</a>
+        <a href="https://furnalitynetwork.github.io/news" class="nav-link">News</a>
         <a href="#contact" class="primary-button text-center mt-2">Contact</a>
       </div>
     </nav>
@@ -64,36 +64,36 @@
             <p class="eyebrow">Studio de diffusion & Réseau indépendant</p>
             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           </div>
-          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight uppercase">
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
             Furnality fait vivre les récits à l’image et au son.
           </h1>
           <p class="mt-6 text-lg text-gray-600 max-w-2xl leading-relaxed">
             Nous concevons, produisons et diffusons des expériences télévisées, radiophoniques et médiatiques francophones basées en Nouvelle-Calédonie.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/Zapping" class="primary-button">Découvrir le Zapping</a>
+            <a href="https://furnalitynetwork.github.io/Zapping" class="primary-button">Découvrir le Zapping</a>
             <a href="#studio" class="secondary-button">En savoir plus</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Bandeau défilant -->
-    <section class="border-b border-gray-200 bg-black py-3 text-white overflow-hidden whitespace-nowrap">
-      <div class="inline-block animate-marquee">
-        <p class="text-xs font-bold tracking-widest uppercase">
+    <!-- Bandeau défilant (Ticker) -->
+    <section class="border-b border-gray-200 bg-black py-3 text-white overflow-hidden">
+      <div class="ticker">
+        <p class="ticker-track text-xs font-bold tracking-widest uppercase">
           FURNALITY — TÉLÉVISION — RADIO — DIFFUSION INDÉPENDANTE — NOUMÉA — NOUVELLE-CALÉDONIE —
         </p>
       </div>
     </section>
 
     <!-- Section : Le Studio -->
-    <section id="studio" class="section-space border-t border-gray-200 py-16">
-      <div class="section-inner max-w-7xl mx-auto px-6">
+    <section id="studio" class="section-space line-top py-16 px-6 md:px-12">
+      <div class="section-inner max-w-7xl mx-auto">
         <div class="grid gap-12 lg:grid-cols-12">
           <div class="lg:col-span-4">
             <p class="eyebrow mb-2">01 — Le Studio</p>
-            <h2 class="text-3xl font-bold text-black leading-tight uppercase">Une présence éditoriale pensée pour le direct.</h2>
+            <h2 class="text-3xl font-bold text-black leading-tight">Une présence éditoriale pensée pour le direct.</h2>
           </div>
           <div class="lg:col-span-8 space-y-6 text-gray-600 leading-relaxed">
             <p class="text-lg text-black font-semibold">
@@ -108,27 +108,27 @@
     </section>
 
     <!-- Section : Expertises -->
-    <section id="expertises" class="section-space border-t border-gray-200 bg-gray-50 py-16">
-      <div class="section-inner max-w-7xl mx-auto px-6">
+    <section id="expertises" class="section-space line-top bg-gray-50 py-16 px-6 md:px-12 border-t border-gray-200">
+      <div class="section-inner max-w-7xl mx-auto">
         <p class="eyebrow mb-2">02 — Domaines d'Antenne</p>
-        <h2 class="text-3xl font-bold text-black mb-10 uppercase">Trois piliers de diffusion.</h2>
+        <h2 class="text-3xl font-bold text-black mb-10">Trois piliers de diffusion.</h2>
         
         <div class="grid gap-6 md:grid-cols-3">
           <article class="p-8 border border-gray-200 bg-white space-y-4">
             <span class="text-xs font-mono font-bold text-gray-400">01 / TV</span>
-            <h3 class="text-xl font-bold text-black uppercase">Télévision & Flux</h3>
+            <h3 class="text-xl font-bold text-black">Télévision & Flux</h3>
             <p class="text-sm text-gray-600 leading-relaxed">Émissions, captations, habillages visuels et régie multicaméra pour les canaux du réseau.</p>
           </article>
 
           <article class="p-8 border border-gray-200 bg-white space-y-4">
             <span class="text-xs font-mono font-bold text-gray-400">02 / RADIO</span>
-            <h3 class="text-xl font-bold text-black uppercase">Radio & Podcasts</h3>
+            <h3 class="text-xl font-bold text-black">Radio & Podcasts</h3>
             <p class="text-sm text-gray-600 leading-relaxed">Formats audio, habillages sonores et programmation musicale continue pour Furnality Radio.</p>
           </article>
 
           <article class="p-8 border border-gray-200 bg-white space-y-4">
             <span class="text-xs font-mono font-bold text-gray-400">03 / MÉDIAS</span>
-            <h3 class="text-xl font-bold text-black uppercase">Création Numérique</h3>
+            <h3 class="text-xl font-bold text-black">Création Numérique</h3>
             <p class="text-sm text-gray-600 leading-relaxed">Séries vidéo, contenus sociaux et formats courts pensés pour la distribution moderne.</p>
           </article>
         </div>
@@ -136,16 +136,16 @@
     </section>
 
     <!-- Section : Contact / Office Broadcaster -->
-    <section id="contact" class="section-space border-t border-gray-200 py-16">
-      <div class="section-inner max-w-7xl mx-auto px-6">
-        <div class="border border-gray-200 border-l-4 border-l-black bg-gray-50 p-8 md:p-12">
+    <section id="contact" class="section-space line-top py-16 px-6 md:px-12 border-t border-gray-200">
+      <div class="section-inner max-w-7xl mx-auto">
+        <div class="feature-panel p-8 bg-gray-50 border border-gray-200">
           <div class="max-w-2xl">
             <p class="eyebrow mb-3">Office BroadCaster</p>
-            <h2 class="text-3xl font-bold text-black uppercase">Prendre l'antenne sur le réseau.</h2>
+            <h2 class="text-3xl font-bold text-black">Prendre l'antenne sur le réseau.</h2>
             <p class="mt-4 text-gray-600 leading-relaxed">
               Projets de diffusion, partenariats de flux ou propositions de contenus : contactez la régie pour rejoindre l'antenne.
             </p>
-            <a href="https://OfficeBroadCaster.pages.dev" target="_blank" rel="noopener noreferrer" class="primary-button mt-6">
+            <a href="https://furnalitynetwork.github.io/OfficeBroadCaster" class="primary-button mt-6 inline-block">
               Contacter la régie
             </a>
           </div>
@@ -155,12 +155,13 @@
 
   </main>
 
-  <!-- Pied de page -->
-  <footer class="bg-white border-t border-gray-200 py-12 px-6 mt-12">
+  <!-- Pied de page officiel -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6">
     <div class="max-w-7xl mx-auto">
+      
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
         
-        <!-- Identité -->
+        <!-- Colonne 1 : Identité & Drapeau NC -->
         <div class="space-y-3">
           <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
           <p class="text-gray-500 leading-relaxed text-xs">
@@ -168,32 +169,40 @@
             Le média francophone et 100% indépendant.
           </p>
           <div class="pt-2 flex flex-col items-start gap-1">
-            <img src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/images/DCNC.svg" alt="Drapeau NC" class="h-6 w-auto object-contain mb-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/images/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
             <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
             <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
           </div>
         </div>
 
-        <!-- Colonnes alimentées dynamiquement par Cloudflare D1 -->
+        <!-- Colonne 2 : Réseaux Furnality -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Furnality</h4>
-          <nav id="footer-furnality" class="flex flex-col gap-2"></nav>
+          <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
         </div>
 
+        <!-- Colonne 3 : Réseaux Office Broadcaster -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
-          <nav id="footer-office" class="flex flex-col gap-2"></nav>
+          <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
         </div>
 
+        <!-- Colonne 4 : Chaînes & Marques -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
-          <nav id="footer-channels" class="flex flex-col gap-2"></nav>
+          <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes">
+            <!-- Injecté dynamiquement via Cloudflare Worker D1 -->
+          </nav>
         </div>
 
-        <!-- Informations & Légal -->
+        <!-- Colonne 5 : INFORMATIONS & LÉGAL -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
-          <nav class="flex flex-col gap-2">
+          <nav class="flex flex-col gap-2" aria-label="Registre Juridique Legacy">
             <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
             <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
             <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
@@ -207,41 +216,67 @@
 
       </div>
 
+      <!-- Mentions bas de page -->
       <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
         <p>&copy; 2026 Furnality — Tous droits réservés.</p>
         <p class="font-semibold text-gray-700">Furnality Network</p>
       </div>
+
     </div>
   </footer>
 
-<!-- Script global du dépôt Asset avec cache buster -->
-<script src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Asset@main/js/global.js?v=2"></script>
-
-  <!-- Fetch Cloudflare D1 avec gestion de BDD -->
+  <!-- SCRIPT D'INJECTION AUTOMATIQUE (D1 WORKER + INTERACTION) -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      fetch('https://furnality-api.furnalitystudio.workers.dev/api/footer-links')
-        .then(response => response.json())
+      // 1. Initialiser les icônes Lucide
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // 2. Gestion du menu mobile
+      const btn = document.getElementById('menu-button');
+      const menu = document.getElementById('mobile-menu');
+      if (btn && menu) {
+        btn.addEventListener('click', () => {
+          menu.classList.toggle('hidden');
+          menu.classList.toggle('flex');
+        });
+      }
+
+      // 3. Connexion au Worker Cloudflare D1
+      fetch('https://furnality-api.darkeoftime.workers.dev/api/footer-links')
+        .then(res => {
+          if (!res.ok) throw new Error('Erreur API HTTP: ' + res.status);
+          return res.json();
+        })
         .then(data => {
           const furnalityNav = document.getElementById('footer-furnality');
           const officeNav = document.getElementById('footer-office');
           const channelsNav = document.getElementById('footer-channels');
 
+          if (furnalityNav) furnalityNav.innerHTML = '';
+          if (officeNav) officeNav.innerHTML = '';
+          if (channelsNav) channelsNav.innerHTML = '';
+
           data.forEach(link => {
             const a = document.createElement('a');
             a.href = link.url;
             a.target = '_blank';
-            a.className = 'footer-link text-gray-500 hover:text-black transition-colors';
+            a.rel = 'noopener noreferrer';
+            a.className = 'footer-link text-gray-500 hover:text-black transition-colors block py-1';
             a.textContent = link.label;
 
-            if (link.id >= 1000 && link.id < 2000 && furnalityNav) furnalityNav.appendChild(a);
-            else if (link.id >= 2000 && link.id < 3000 && officeNav) officeNav.appendChild(a);
-            else if (link.id >= 3000 && channelsNav) channelsNav.appendChild(a);
+            if (link.id >= 1000 && link.id < 2000 && furnalityNav) {
+              furnalityNav.appendChild(a);
+            } else if (link.id >= 2000 && link.id < 3000 && officeNav) {
+              officeNav.appendChild(a);
+            } else if (link.id >= 3000 && channelsNav) {
+              channelsNav.appendChild(a);
+            }
           });
         })
-        .catch(error => console.error('Erreur Worker D1:', error));
+        .catch(err => console.error('Erreur chargement D1:', err));
     });
   </script>
 </body>
 </html>
-

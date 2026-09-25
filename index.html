@@ -5,13 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furnality — Studio de diffusion & Réseau Multimédia</title>
   
-  <!-- CDN Tailwind CSS & Lucide Icons -->
+  <!-- Tailwind CSS & Lucide Icons via CDN -->
   <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
   
-  <!-- Assets centralisés depuis votre dépôt public via jsDelivr CDN -->
-  <link rel="icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/images/Fav%20-%20Furnality.svg">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/css/global.css">
+  <!-- Fallback Assets si disponibles dans le repo Assets -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/css/global.css?v=2">
+
+  <style>
+    /* Keyframes et utilitaires essentiels intégrés */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 25s linear infinite;
+    }
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #6b7280;
+    }
+    .primary-button {
+      background-color: #000000;
+      color: #ffffff;
+      padding: 0.75rem 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      display: inline-flex;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+    .primary-button:hover {
+      background-color: #262626;
+    }
+    .secondary-button {
+      border: 1px solid #e5e7eb;
+      color: #000000;
+      padding: 0.75rem 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      display: inline-flex;
+      align-items: center;
+      transition: border-color 0.2s ease;
+    }
+    .secondary-button:hover {
+      border-color: #000000;
+    }
+    .nav-link {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #4b5563;
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover {
+      color: #000000;
+    }
+    .footer-link {
+      color: #6b7280;
+      font-size: 0.85rem;
+      transition: color 0.15s ease;
+    }
+    .footer-link:hover {
+      color: #000000;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between">
 
@@ -21,18 +90,18 @@
       
       <!-- Logo Furnality -->
       <div class="logo-box">
-        <a href="/" class="flex items-center gap-3">
+        <a href="./" class="flex items-center gap-3">
           <img src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/images/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
           <span class="text-base font-bold tracking-widest text-black uppercase">Furnality</span>
         </a>
       </div>
 
-      <!-- Navigation vers les portails du réseau -->
+      <!-- Navigation principale -->
       <div class="hidden lg:flex items-center gap-8">
-        <a href="/" class="nav-link text-black font-bold">Accueil</a>
-        <a href="/Zapping" class="nav-link">Zapping</a>
+        <a href="./" class="nav-link text-black font-bold">Accueil</a>
+        <a href="Zapping/" class="nav-link">Zapping</a>
         <a href="https://OfficeBroadCaster.pages.dev" class="nav-link" target="_blank" rel="noopener noreferrer">Office Broadcaster</a>
-        <a href="/news" class="nav-link">News</a>
+        <a href="news/" class="nav-link">News</a>
       </div>
 
       <!-- Actions & Menu Mobile -->
@@ -44,11 +113,11 @@
       </div>
 
       <!-- Menu Mobile -->
-      <div id="mobile-menu" class="mobile-menu absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg lg:hidden">
-        <a href="/" class="nav-link font-bold">Accueil</a>
-        <a href="/Zapping" class="nav-link">Zapping</a>
+      <div id="mobile-menu" class="hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg lg:hidden">
+        <a href="./" class="nav-link font-bold">Accueil</a>
+        <a href="Zapping/" class="nav-link">Zapping</a>
         <a href="https://OfficeBroadCaster.pages.dev" class="nav-link" target="_blank" rel="noopener noreferrer">Office Broadcaster</a>
-        <a href="/news" class="nav-link">News</a>
+        <a href="news/" class="nav-link">News</a>
         <a href="#contact" class="primary-button text-center mt-2">Contact</a>
       </div>
     </nav>
@@ -71,7 +140,7 @@
             Nous concevons, produisons et diffusons des expériences télévisées, radiophoniques et médiatiques francophones basées en Nouvelle-Calédonie.
           </p>
           <div class="mt-8 flex flex-wrap gap-4">
-            <a href="/Zapping" class="primary-button">Découvrir le Zapping</a>
+            <a href="Zapping/" class="primary-button">Découvrir le Zapping</a>
             <a href="#studio" class="secondary-button">En savoir plus</a>
           </div>
         </div>
@@ -80,16 +149,16 @@
 
     <!-- Bandeau défilant (Ticker) -->
     <section class="border-b border-gray-200 bg-black py-3 text-white overflow-hidden whitespace-nowrap">
-      <div class="inline-block animate-marquee">
+      <div class="animate-marquee">
         <p class="text-xs font-bold tracking-widest uppercase">
-          FURNALITY — TÉLÉVISION — RADIO — DIFFUSION INDÉPENDANTE — NOUMÉA — NOUVELLE-CALÉDONIE —
+          FURNALITY — TÉLÉVISION — RADIO — DIFFUSION INDÉPENDANTE — NOUMÉA — NOUVELLE-CALÉDONIE — FURNALITY — TÉLÉVISION — RADIO — DIFFUSION INDÉPENDANTE — NOUMÉA — NOUVELLE-CALÉDONIE —
         </p>
       </div>
     </section>
 
     <!-- Section : Le Studio -->
-    <section id="studio" class="section-space border-t border-gray-200">
-      <div class="section-inner max-w-7xl mx-auto px-6">
+    <section id="studio" class="py-16 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-6">
         <div class="grid gap-12 lg:grid-cols-12">
           <div class="lg:col-span-4">
             <p class="eyebrow mb-2">01 — Le Studio</p>
@@ -108,8 +177,8 @@
     </section>
 
     <!-- Section : Expertises -->
-    <section id="expertises" class="section-space border-t border-gray-200 bg-gray-50">
-      <div class="section-inner max-w-7xl mx-auto px-6">
+    <section id="expertises" class="py-16 border-t border-gray-200 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
         <p class="eyebrow mb-2">02 — Domaines d'Antenne</p>
         <h2 class="text-3xl font-bold text-black mb-10 uppercase">Trois piliers de diffusion.</h2>
         
@@ -136,8 +205,8 @@
     </section>
 
     <!-- Section : Contact / Office Broadcaster -->
-    <section id="contact" class="section-space border-t border-gray-200">
-      <div class="section-inner max-w-7xl mx-auto px-6">
+    <section id="contact" class="py-16 border-t border-gray-200">
+      <div class="max-w-7xl mx-auto px-6">
         <div class="border border-gray-200 border-l-4 border-l-black bg-gray-50 p-8 md:p-12">
           <div class="max-w-2xl">
             <p class="eyebrow mb-3">Office BroadCaster</p>
@@ -155,13 +224,13 @@
 
   </main>
 
-  <!-- Pied de page officiel injecté dynamiquement depuis Cloudflare D1 -->
+  <!-- Pied de page -->
   <footer class="bg-white border-t border-gray-200 py-12 px-6 mt-12">
     <div class="max-w-7xl mx-auto">
       
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
         
-        <!-- Colonne 1 : Identité & Drapeau NC -->
+        <!-- Colonne 1 : Identité -->
         <div class="space-y-3">
           <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
           <p class="text-gray-500 leading-relaxed text-xs">
@@ -169,54 +238,53 @@
             Le média francophone et 100% indépendant.
           </p>
           <div class="pt-2 flex flex-col items-start gap-1">
-            <img src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/images/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <img src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/images/DCNC.svg" alt="Drapeau NC" class="h-6 w-auto object-contain mb-1" onerror="this.style.display='none'">
             <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
             <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
           </div>
         </div>
 
-        <!-- Colonne 2 : Réseaux Furnality (D1 Worker) -->
+        <!-- Colonne 2 : Réseaux Furnality -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Furnality</h4>
-          <nav id="footer-furnality" class="flex flex-col gap-2" aria-label="Réseaux Furnality">
-            <!-- Injecté dynamiquement par JS -->
+          <nav id="footer-furnality" class="flex flex-col gap-2">
+            <!-- Injecté via JS / Worker D1 -->
           </nav>
         </div>
 
-        <!-- Colonne 3 : Réseaux Office Broadcaster (D1 Worker) -->
+        <!-- Colonne 3 : Réseaux Office Broadcaster -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Office Broadcaster</h4>
-          <nav id="footer-office" class="flex flex-col gap-2" aria-label="Réseaux Office Broadcaster">
-            <!-- Injecté dynamiquement par JS -->
+          <nav id="footer-office" class="flex flex-col gap-2">
+            <!-- Injecté via JS / Worker D1 -->
           </nav>
         </div>
 
-        <!-- Colonne 4 : Chaînes & Marques (D1 Worker) -->
+        <!-- Colonne 4 : Chaînes & Marques -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Chaînes & Marques</h4>
-          <nav id="footer-channels" class="flex flex-col gap-2" aria-label="Réseaux Chaînes">
-            <!-- Injecté dynamiquement par JS -->
+          <nav id="footer-channels" class="flex flex-col gap-2">
+            <!-- Injecté via JS / Worker D1 -->
           </nav>
         </div>
 
-        <!-- Colonne 5 : INFORMATIONS & LÉGAL -->
+        <!-- Colonne 5 : Informations & Légal -->
         <div>
           <h4 class="eyebrow text-xs mb-4">Informations & Légal</h4>
-          <nav class="flex flex-col gap-2" aria-label="Registre Juridique">
-            <a href="/legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
-            <a href="/legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
-            <a href="/legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
-            <a href="/legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
-            <a href="/legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
-            <a href="/legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
-            <a href="/legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
-            <a href="/legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
+          <nav class="flex flex-col gap-2">
+            <a href="legacy/mentions-legales.html" class="footer-link">Mentions Légales</a>
+            <a href="legacy/cgu-conditions.html" class="footer-link">CGU & Conditions</a>
+            <a href="legacy/confidentialite-donnees.html" class="footer-link">Confidentialité</a>
+            <a href="legacy/gestion-cookies.html" class="footer-link">Traceurs & Cookies</a>
+            <a href="legacy/charte-antenne.html" class="footer-link">Charte des Antennes</a>
+            <a href="legacy/acces-restreint.html" class="footer-link">Accès Restreints</a>
+            <a href="legacy/devenir-membre.html" class="footer-link">Devenir Membre</a>
+            <a href="legacy/fondateurs-contributeurs.html" class="footer-link">Fondateurs & Crédits</a>
           </nav>
         </div>
 
       </div>
 
-      <!-- Mentions bas de page -->
       <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
         <p>&copy; 2026 Furnality — Tous droits réservés.</p>
         <p class="font-semibold text-gray-700">Furnality Network</p>
@@ -225,7 +293,50 @@
     </div>
   </footer>
 
-  <!-- Script global hébergé sur le CDN -->
-  <script src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/js/global.js"></script>
+  <!-- Execution JS autonome -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialisation des icônes Lucide
+      if (typeof lucide !== 'undefined') {
+        lucide.createIcons();
+      }
+
+      // Interactivité du Menu Mobile
+      const menuBtn = document.getElementById('menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          mobileMenu.classList.toggle('flex');
+        });
+      }
+
+      // Récupération dynamique des liens D1
+      fetch('https://furnality-api.furnalitystudio.workers.dev/api/footer-links')
+        .then(res => res.json())
+        .then(data => {
+          const furnalityNav = document.getElementById('footer-furnality');
+          const officeNav = document.getElementById('footer-office');
+          const channelsNav = document.getElementById('footer-channels');
+
+          data.forEach(link => {
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.target = '_blank';
+            a.rel = 'noopener noreferrer';
+            a.className = 'footer-link';
+            a.textContent = link.label;
+
+            if (link.id >= 1000 && link.id < 2000 && furnalityNav) furnalityNav.appendChild(a);
+            else if (link.id >= 2000 && link.id < 3000 && officeNav) officeNav.appendChild(a);
+            else if (link.id >= 3000 && channelsNav) channelsNav.appendChild(a);
+          });
+        })
+        .catch(err => console.error('Erreur Worker D1:', err));
+    });
+  </script>
+  
+  <!-- Script global de fallback depuis le dépôt Assets -->
+  <script src="https://cdn.jsdelivr.net/gh/FurnalityNetwork/Assets@main/js/global.js?v=2"></script>
 </body>
 </html>

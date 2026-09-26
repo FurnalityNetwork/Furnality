@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Furnality — Studio de diffusion & Réseau Multimédia</title>
   
-  <!-- Frameworks CSS & Icônes -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
 
-  <!-- Favicon & Stylesheet unifiés depuis le dépôt Asset -->
-  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/images/Fav%20-%20Furnality.svg">
-  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
+  <!-- Ressources centralisées depuis le dépôt Asset -->
+<link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/FAV%20-%20Furnality.svg">
+<link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
+  
+  <!-- Script global centralisé -->
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
 </head>
 <body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between">
 
@@ -22,7 +25,7 @@
       <!-- Logo Furnality -->
       <div class="logo-box">
         <a href="https://furnalitynetwork.github.io" class="flex items-center gap-3">
-          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/images/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
           <span class="text-base font-bold tracking-widest text-black uppercase">Furnality</span>
         </a>
       </div>
@@ -169,7 +172,7 @@
             Le média francophone et 100% indépendant.
           </p>
           <div class="pt-2 flex flex-col items-start gap-1">
-            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/images/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
             <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
             <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
           </div>
@@ -225,58 +228,5 @@
     </div>
   </footer>
 
-  <!-- SCRIPT D'INJECTION AUTOMATIQUE (D1 WORKER + INTERACTION) -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // 1. Initialiser les icônes Lucide
-      if (typeof lucide !== 'undefined') {
-        lucide.createIcons();
-      }
-
-      // 2. Gestion du menu mobile
-      const btn = document.getElementById('menu-button');
-      const menu = document.getElementById('mobile-menu');
-      if (btn && menu) {
-        btn.addEventListener('click', () => {
-          menu.classList.toggle('hidden');
-          menu.classList.toggle('flex');
-        });
-      }
-
-      // 3. Connexion au Worker Cloudflare D1
-      fetch('https://furnality-api.darkeoftime.workers.dev/api/footer-links')
-        .then(res => {
-          if (!res.ok) throw new Error('Erreur API HTTP: ' + res.status);
-          return res.json();
-        })
-        .then(data => {
-          const furnalityNav = document.getElementById('footer-furnality');
-          const officeNav = document.getElementById('footer-office');
-          const channelsNav = document.getElementById('footer-channels');
-
-          if (furnalityNav) furnalityNav.innerHTML = '';
-          if (officeNav) officeNav.innerHTML = '';
-          if (channelsNav) channelsNav.innerHTML = '';
-
-          data.forEach(link => {
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.target = '_blank';
-            a.rel = 'noopener noreferrer';
-            a.className = 'footer-link text-gray-500 hover:text-black transition-colors block py-1';
-            a.textContent = link.label;
-
-            if (link.id >= 1000 && link.id < 2000 && furnalityNav) {
-              furnalityNav.appendChild(a);
-            } else if (link.id >= 2000 && link.id < 3000 && officeNav) {
-              officeNav.appendChild(a);
-            } else if (link.id >= 3000 && channelsNav) {
-              channelsNav.appendChild(a);
-            }
-          });
-        })
-        .catch(err => console.error('Erreur chargement D1:', err));
-    });
-  </script>
 </body>
 </html>

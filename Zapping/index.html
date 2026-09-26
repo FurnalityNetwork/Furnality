@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zapping — Furnality Network</title>
+  
+  <!-- Tailwind CSS & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  
+  <!-- Ressources Centralisées (Dépôt Asset) -->
+  <link rel="icon" type="image/svg+xml" href="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FAV/FAV%20-%20Zapping.svg">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/global.css?v=20">
+  <link rel="stylesheet" href="https://raw.githack.com/FurnalityNetwork/Asset/main/css/zapping.css?v=1">
+  
+  <!-- Scripts Centralisés (Dépôt Asset) -->
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/global.js?v=1"></script>
+</head>
+<body class="bg-white text-gray-900 antialiased min-h-screen flex flex-col justify-between">
+
+  <!-- Navigation principale -->
+  <header class="top-nav fixed top-0 z-40 w-full px-6 py-4 md:px-12 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <nav class="relative mx-auto flex max-w-7xl items-center justify-between" aria-label="Navigation principale">
+      <div class="logo-box flex items-center gap-3">
+        <a href="https://furnalitynetwork.github.io">
+          <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/Furnality%20Logo.svg" alt="Furnality" class="h-7 w-auto object-contain" onerror="this.style.display='none'">
+        </a>
+        <span class="logo-separator text-gray-300 font-light text-xl">|</span>
+        <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/STD/STUDIO/ZAPPING.svg" alt="Zapping" class="h-8 w-auto object-contain" onerror="this.style.display='none'">
+      </div>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#chaines" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-500 hover:text-black transition-colors">Canaux & Antennes</a>
+        <a href="#programmes" class="nav-link text-xs font-bold tracking-widest uppercase text-gray-500 hover:text-black transition-colors">Grille & Univers</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#contact" class="primary-button hidden md:inline-flex bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">Contact</a>
+        <button id="menu-button" type="button" class="inline-flex h-10 w-10 items-center justify-center border border-gray-200 md:hidden" aria-label="Ouvrir le menu">
+          <i data-lucide="menu" width="18" height="18"></i>
+        </button>
+      </div>
+
+      <div id="mobile-menu" class="mobile-menu hidden absolute top-full left-0 right-0 flex-col gap-4 p-6 bg-white border-b border-gray-200 shadow-lg">
+        <a href="#chaines" class="nav-link">Canaux & Antennes</a>
+        <a href="#programmes" class="nav-link">Grille & Univers</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="pt-20">
+    <!-- Section : Accueil / Hero -->
+    <section id="accueil" class="hero relative border-b border-gray-200 px-6 py-20 md:px-12 bg-white min-h-[85vh] flex items-center">
+      <div class="relative mx-auto w-full max-w-7xl z-10">
+        <div class="max-w-3xl">
+          <p class="eyebrow text-gray-500 text-xs font-bold tracking-[0.18em] uppercase mb-4">plateforme de streaming</p>
+          <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-black leading-tight">
+            ZAPPING by Furnality.
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 max-w-xl">
+            Vos histoires préférées, sans la moindre publicité grâce à votre soutien.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-4">
+            <a href="#chaines" class="primary-button bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors">Découvrir les chaînes et radios</a>
+            <a href="#programmes" class="secondary-button border border-gray-200 px-6 py-3 text-xs font-bold uppercase tracking-widest hover:border-black transition-colors">Grille des antennes</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Chaînes -->
+    <section id="chaines" class="section-space py-20 px-6 md:px-12">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <p class="eyebrow text-gray-500 text-xs font-bold tracking-[0.18em] uppercase mb-3">TV & Radio</p>
+            <h2 class="text-3xl font-bold text-black max-w-2xl">EN DIRECT.</h2>
+          </div>
+        </div>
+
+        <h3 class="mt-12 text-lg font-bold border-b border-gray-200 pb-2">Télévision</h3>
+        <div id="tv-channels-grid" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          <!-- Injecté via zapping.js dans Asset -->
+        </div>
+
+        <h3 class="mt-12 text-lg font-bold border-b border-gray-200 pb-2">Radio</h3>
+        <div id="radio-channels-grid" class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+          <!-- Injecté via zapping.js dans Asset -->
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section : À la une & Programmes -->
+    <section id="programmes" class="section-space py-20 px-6 md:px-12 border-t border-gray-200 bg-gray-50">
+      <div class="section-inner max-w-7xl mx-auto">
+        <div class="flex flex-col justify-between gap-5 md:flex-row md:items-end mb-10">
+          <div>
+            <p class="eyebrow text-gray-500 text-xs font-bold tracking-[0.18em] uppercase mb-3">Catalogue</p>
+            <h2 class="text-3xl font-bold text-black">Nos émissions & formats.</h2>
+          </div>
+        </div>
+
+        <div id="shows-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Injecté via zapping.js dans Asset -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section : Contact / Affiliation -->
+    <section id="contact" class="section-space py-20 px-6 md:px-12 border-t border-gray-200">
+      <div class="section-inner max-w-7xl mx-auto">
+        <article class="feature-panel p-12 bg-gray-50 border border-gray-200 border-l-4 border-l-[#0055ff]">
+          <div class="max-w-2xl">
+            <p class="eyebrow text-gray-500 text-xs font-bold tracking-[0.18em] uppercase mb-3">Office BroadCaster</p>
+            <h2 class="text-3xl font-bold text-black">Rejoindre le réseau de diffusion.</h2>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              Projets de diffusion, partenariats de flux ou propositions de contenus : nous accompagnons les formats originaux et la création indépendante.
+            </p>
+            <a href="https://furnalitynetwork.github.io/OfficeBroadCaster/" class="primary-button bg-black text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-gray-800 mt-6 inline-block">
+              Contacter la régie
+            </a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Pied de page -->
+  <footer class="bg-white border-t border-gray-200 py-12 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8 pb-10 border-b border-gray-200 text-xs">
+        
+        <div class="space-y-3">
+          <p class="text-base font-bold tracking-widest text-black uppercase">FURNALITY</p>
+          <p class="text-gray-500 leading-relaxed text-xs">
+            Du Son, de l’Image, une Famille.<br>
+            Le média francophone et 100% indépendant.
+          </p>
+          <div class="pt-2 flex flex-col items-start gap-1">
+            <img src="https://raw.githack.com/FurnalityNetwork/Asset/main/Assets/FLAG/DCNC.svg" alt="Drapeau Commun NC" class="h-6 w-auto object-contain mb-1" />
+            <p class="text-xs font-bold text-black leading-tight">Studio Nouméa,</p>
+            <p class="text-xs font-bold text-black leading-tight">Nouvelle-Calédonie</p>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4 text-gray-500 font-bold uppercase tracking-widest">Furnality</h4>
+          <nav id="footer-furnality" class="flex flex-col gap-2"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4 text-gray-500 font-bold uppercase tracking-widest">Office Broadcaster</h4>
+          <nav id="footer-office" class="flex flex-col gap-2"></nav>
+        </div>
+        <div>
+          <h4 class="eyebrow text-xs mb-4 text-gray-500 font-bold uppercase tracking-widest">Chaînes & Marques</h4>
+          <nav id="footer-channels" class="flex flex-col gap-2"></nav>
+        </div>
+
+        <div>
+          <h4 class="eyebrow text-xs mb-4 text-gray-500 font-bold uppercase tracking-widest">Informations & Légal</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="/legacy/mentions-legales.html" class="text-gray-500 hover:text-black">Mentions Légales</a>
+            <a href="/legacy/cgu-conditions.html" class="text-gray-500 hover:text-black">CGU & Conditions</a>
+            <a href="/legacy/confidentialite-donnees.html" class="text-gray-500 hover:text-black">Confidentialité</a>
+            <a href="/legacy/gestion-cookies.html" class="text-gray-500 hover:text-black">Traceurs & Cookies</a>
+            <a href="/legacy/charte-antenne.html" class="text-gray-500 hover:text-black">Charte des Antennes</a>
+            <a href="/legacy/acces-restreint.html" class="text-gray-500 hover:text-black">Accès Restreints</a>
+            <a href="/legacy/devenir-membre.html" class="text-gray-500 hover:text-black">Devenir Membre</a>
+            <a href="/legacy/fondateurs-contributeurs.html" class="text-gray-500 hover:text-black">Fondateurs & Crédits</a>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="mt-8 flex flex-col md:flex-row items-center justify-between text-xs text-gray-500 gap-4">
+        <p>&copy; 2026 Furnality — Tous droits réservés.</p>
+        <span class="font-semibold text-gray-700">Furnality Zapping</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://raw.githack.com/FurnalityNetwork/Asset/main/js/zapping.js?v=1"></script>
+</body>
+</html>
